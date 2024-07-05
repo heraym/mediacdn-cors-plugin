@@ -53,7 +53,7 @@ impl HttpContext for DemoPlugin {
       Action::Continue
     }
     fn on_http_response_headers(&mut self, _: usize, _: bool) -> Action {
-      let re = Regex::new(r"^https?.+(\.directvgo\.com|\.skymais\.com\.br|\.engsky\.com\.br|((localhost|192\.168\.\d{1,3}\.\d{1,3}|10\.\d{1,3}\.\d{1,3}\.\d{1,3})\:(3637|3638)))$").unwrap();
+      let re = Regex::new(r"^https?.+(\.demo\.com)$").unwrap();
       if self.header_content == ""  {
         self.set_http_response_header("Access-Control-Allow-Origin", Some(""));
         Action::Continue
